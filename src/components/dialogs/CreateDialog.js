@@ -25,7 +25,7 @@ const CreateDialog = ({ open, onClose, onSave, onInputChange }) => {
                 />
             </DialogContent>
             <DialogActions>
-                <Button onClick={onClose}>Cancel</Button>
+                <Button onClick={onClose}>Close</Button>
                 <Button onClick={onSave}>Save</Button>
             </DialogActions>
         </Dialog>

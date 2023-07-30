@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import logo from "../logo.svg";
 import {Button} from "@mui/material";
 
-const Header = () => {
+const HeaderComponent = ({onCreate}) => {
     return (
         <React.Fragment>
             <header className="App-header">
@@ -12,6 +12,7 @@ const Header = () => {
                         className="create-button"
                         variant="contained"
                         color="grey"
+                        onClick={onCreate}
                     >
                         Create New Post
                     </Button>
@@ -21,4 +22,4 @@ const Header = () => {
     );
 }
 
-export default Header;
+export default HeaderComponent;

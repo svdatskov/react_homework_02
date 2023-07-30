@@ -2,19 +2,19 @@ import React from "react";
 import {IconButton} from "@mui/material";
 import {Delete, Edit} from "@mui/icons-material";
 
-const LineButtons = ({hover}) => {
+const LineButtonsComponent = ({hover, onEdit, onDelete}) => {
     if (hover) {
         return (
             <React.Fragment>
                 <IconButton size="small" edge="end">
-                    <Edit className="edit"/>
+                    <Edit onClick={onEdit}/>
                 </IconButton>
                 <IconButton size="small" edge="end">
-                    <Delete/>
+                    <Delete onClick={onDelete}/>
                 </IconButton>
             </React.Fragment>
         )
     }
 }
 
-export default LineButtons;
+export default LineButtonsComponent;

@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {useEffect, useState} from "react";
-import PostsContent from "./components/PostsContent";
+import PostsContentComponent from "./components/PostsContentComponent";
 import {Button} from "@mui/material";
-import Header from "./components/Header";
+import HeaderComponent from "./components/HeaderComponent";
+import PostsServiceComponent from "./components/PostsServiceComponent";
 
 function App() {
     const [posts, setPosts] = useState([]);
@@ -16,10 +17,29 @@ function App() {
         fetchPostData()
     }, [])
 
+    const handleCreateElement = (post) => {
+        setPosts((prevData) => [...prevData, post]);
+    };
+
+    const handleEditElement = (editedPost) => {
+        setPosts((prevData) =>
+            prevData.map(post => (post.id === editedPost.id ? editedPost : post))
+        );
+    };
+
+    const handleDeleteElement = (deletedPost) => {
+        setPosts((prevData) =>
+            prevData.filter(post => post.id !== deletedPost.id));
+    };
+
     return (
         <React.Fragment>
-            <Header />
-            <PostsContent posts={posts}/>
+            <PostsServiceComponent
+                posts={posts}
+                onCreate={handleCreateElement}
+                onEdit={handleEditElement}
+                onDelete={handleDeleteElement}
+            />
         </React.Fragment>
     );
 }
