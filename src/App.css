@@ -2,31 +2,57 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.AccordionComponent:hover {
+  background-color: #f9f9f9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/*@media (prefers-reduced-motion: no-preference) {*/
+/*  .App-logo {*/
+/*    max-width: 10%;*/
+/*    max-height: 10%;*/
+/*  }*/
+/*}*/
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #FFFFFF;
+  min-height: 5vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  align-items: start;
+}
+
+.App-logo {
+  height: 12vmin;
+  pointer-events: none;
+  align-items: end;
+}
+
+nav {
+  height: 12vmin;
+  width: 90%;
+}
+
+.create-button {
+  float:right;
+  max-height: 12vmin;
+  max-width: 20%;
+  margin-bottom: 50px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.create-button:hover {
+  background-color: #0056b3;
 }
 
 .App-link {
   color: #61dafb;
 }
+
+.MuiIconButton-sizeSmall
 
 @keyframes App-logo-spin {
   from {
