@@ -21,7 +21,7 @@ const EditDialog = ({ open, post, onClose, onSave, onInputChange }) => {
                 />
                 <InputLabel>Text</InputLabel>
                 <TextField
-                    name="text"
+                    name="body"
                     value={post.body}
                     onChange={onInputChange}
                     multiline

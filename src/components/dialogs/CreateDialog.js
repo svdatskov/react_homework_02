@@ -17,7 +17,7 @@ const CreateDialog = ({ open, onClose, onSave, onInputChange }) => {
                 <TextField name="title" onChange={onInputChange} />
                 <InputLabel>Text</InputLabel>
                 <TextField
-                    name="text"
+                    name="body"
                     onChange={onInputChange}
                     multiline
                     rows={5}

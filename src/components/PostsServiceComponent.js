@@ -4,7 +4,6 @@ import CreateDialog from "./dialogs/CreateDialog";
 import React, {useState} from "react";
 import HeaderComponent from "./HeaderComponent";
 import PostsContentComponent from "./PostsContentComponent";
-import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
 const PostsServiceComponent = ({posts, onDelete, onEdit, onCreate}) => {
     const [isEditDialogOpen, setEditDialogOpen] = useState(false);
@@ -63,7 +62,7 @@ const PostsServiceComponent = ({posts, onDelete, onEdit, onCreate}) => {
     };
 
     const handleSaveNewPost = () => {
-        onCreate({...newPost, id: generateUniqueID});
+        onCreate({...newPost, id: Math.floor(1000 + Math.random() * 9000)});
         handleCloseCreateDialog();
     };
 
