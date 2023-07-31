@@ -14,14 +14,13 @@ const CreateDialog = ({ open, onClose, onSave, onInputChange }) => {
             <DialogTitle>Create New Post</DialogTitle>
             <DialogContent>
                 <InputLabel>Title</InputLabel>
-                <TextField name="title" onChange={onInputChange} fullWidth />
+                <TextField name="title" onChange={onInputChange} />
                 <InputLabel>Text</InputLabel>
                 <TextField
-                    name="body"
+                    name="text"
                     onChange={onInputChange}
-                    fullWidth
                     multiline
-                    rows={4}
+                    rows={5}
                 />
             </DialogContent>
             <DialogActions>

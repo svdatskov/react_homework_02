@@ -18,16 +18,14 @@ const EditDialog = ({ open, post, onClose, onSave, onInputChange }) => {
                     name="title"
                     value={post.title}
                     onChange={onInputChange}
-                    fullWidth
                 />
                 <InputLabel>Text</InputLabel>
                 <TextField
-                    name="body"
+                    name="text"
                     value={post.body}
                     onChange={onInputChange}
-                    fullWidth
                     multiline
-                    rows={4}
+                    rows={6}
                 />
             </DialogContent>
             <DialogActions>

@@ -9,7 +9,7 @@ import {Delete, Edit} from "@mui/icons-material";
 import '../App.css';
 import {IconButton} from "@mui/material";
 import {useState} from "react";
-import LineButtonsComponent from "./LineButtonsComponent";
+import IconButtonsComponent from "./IconButtonsComponent";
 
 const AccordionComponent = ({post, onEdit, onDelete}) => {
 
@@ -43,7 +43,7 @@ const AccordionComponent = ({post, onEdit, onDelete}) => {
                         {post.title}
                     </Typography>
                     <Typography>
-                        <LineButtonsComponent
+                        <IconButtonsComponent
                             post={post}
                             hover={hover}
                             onEdit={onEdit}

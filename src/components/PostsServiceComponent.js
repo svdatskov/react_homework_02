@@ -7,9 +7,9 @@ import PostsContentComponent from "./PostsContentComponent";
 import {generateUniqueID} from "web-vitals/dist/modules/lib/generateUniqueID";
 
 const PostsServiceComponent = ({posts, onDelete, onEdit, onCreate}) => {
-    const [editDialogOpen, setEditDialogOpen] = useState(false);
-    const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
-    const [createDialogOpen, setCreateDialogOpen] = useState(false);
+    const [isEditDialogOpen, setEditDialogOpen] = useState(false);
+    const [isDeleteDialogOpen, setDeleteDialogOpen] = useState(false);
+    const [isCreateDialogOpen, setCreateDialogOpen] = useState(false);
     const [newPost, setNewPost] = useState({title: "", body: ""});
     const [selectedPost, setSelectedPost] = useState({});
 
@@ -23,24 +23,24 @@ const PostsServiceComponent = ({posts, onDelete, onEdit, onCreate}) => {
         setDeleteDialogOpen(false);
     };
 
-    const handleDelete = () => {
-        onDelete(selectedPost);
+    const handleDeletePost = () => {
         handleCloseDeleteDialog();
+        onDelete(selectedPost);
     };
 
     const handleOpenEditDialog = (post) => {
-        setSelectedPost(post);
         setEditDialogOpen(true);
+        setSelectedPost(post);
     };
 
     const handleCloseEditDialog = () => {
-        setSelectedPost({});
         setEditDialogOpen(false);
+        setSelectedPost({});
     };
 
-    const handleSaveEdit = () => {
-        onEdit(selectedPost);
+    const handleEditPost = () => {
         handleCloseEditDialog();
+        onEdit(selectedPost);
     };
 
     const handleInputChangeEdit = (e) => {
@@ -70,20 +70,20 @@ const PostsServiceComponent = ({posts, onDelete, onEdit, onCreate}) => {
     return (
         <React.Fragment>
             <DeleteDialog
-                open={deleteDialogOpen}
+                open={isDeleteDialogOpen}
                 post={selectedPost}
                 onClose={handleCloseDeleteDialog}
-                onDelete={handleDelete}
+                onDelete={handleDeletePost}
             />
             <EditDialog
-                open={editDialogOpen}
+                open={isEditDialogOpen}
                 post={selectedPost}
                 onClose={handleCloseEditDialog}
-                onSave={handleSaveEdit}
+                onSave={handleEditPost}
                 onInputChange={handleInputChangeEdit}
             />
             <CreateDialog
-                open={createDialogOpen}
+                open={isCreateDialogOpen}
                 onClose={handleCloseCreateDialog}
                 onSave={handleSaveNewPost}
                 onInputChange={handleInputChangeCreate}

@@ -18,17 +18,17 @@ function App() {
     }, [])
 
     const handleCreateElement = (post) => {
-        setPosts((prevData) => [...prevData, post]);
+        setPosts(prevData => [...prevData, post]);
     };
 
     const handleEditElement = (editedPost) => {
-        setPosts((prevData) =>
+        setPosts(prevData =>
             prevData.map(post => (post.id === editedPost.id ? editedPost : post))
         );
     };
 
     const handleDeleteElement = (deletedPost) => {
-        setPosts((prevData) =>
+        setPosts(prevData =>
             prevData.filter(post => post.id !== deletedPost.id));
     };
 
