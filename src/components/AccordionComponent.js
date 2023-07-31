@@ -11,7 +11,7 @@ import {IconButton} from "@mui/material";
 import {useState} from "react";
 import LineButtonsComponent from "./LineButtonsComponent";
 
-const AccordionComponent = ({posts, onEdit, onDelete}) => {
+const AccordionComponent = ({post, onEdit, onDelete}) => {
 
     const [expanded, setExpanded] = useState(false);
     const [hover, setHover] = useState(false);
@@ -32,23 +32,27 @@ const AccordionComponent = ({posts, onEdit, onDelete}) => {
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
         >
-            <Accordion expanded={expanded === posts.id} onChange={handleChange(posts.id)}>
+            <Accordion expanded={expanded === post.id} onChange={handleChange(post.id)}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon/>}
                 >
                     <Typography sx={{width: '5%', flexShrink: 0}}>
-                        <b>{posts.id}.</b>
+                        <b>{post.id}.</b>
                     </Typography>
                     <Typography sx={{width: '85%', flexShrink: 0}}>
-                        {posts.title}
+                        {post.title}
                     </Typography>
                     <Typography>
-                        <LineButtonsComponent hover={hover} onEdit={onEdit} onDelete={onDelete}/>
+                        <LineButtonsComponent
+                            post={post}
+                            hover={hover}
+                            onEdit={onEdit}
+                            onDelete={onDelete}/>
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        {posts.body}
+                        {post.body}
                     </Typography>
                 </AccordionDetails>
             </Accordion>

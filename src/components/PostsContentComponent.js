@@ -7,7 +7,7 @@ const PostsContentComponent = ({posts, onEdit, onDelete}) => {
         <React.Fragment>
             {posts.map(post => (
                 <AccordionComponent
-                    posts={post}
+                    post={post}
                     onEdit={onEdit}
                     onDelete={onDelete}
                 />
